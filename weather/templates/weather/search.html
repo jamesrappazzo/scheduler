@@ -1,0 +1,24 @@
+{% extends 'weather/base.html' %}
+
+{% block headline %}
+  <h2>Search for weather by Zip Code or City and State</h2>
+{% endblock headline %}
+
+{% block content %}
+<div class="row">
+  <div class="two columns">&nbsp;</div>
+  <div class="ten columns">
+    <form method="post">
+      {% csrf_token %}
+      {{ zip_form.as_p }}
+      <button type="submit" name="action" value="zip_form">Search</button>
+    </form>
+    <hr>
+    <form method="post">
+      {% csrf_token %}
+      {{ city_state_form.as_p }}
+      <button type="submit" name="action" value="city_state_form">Search</button>
+    </form>
+  </div>
+</div>
+  {% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'weather/base.html' %}
+
+{% block title %}Logged out.{% endblock title %}following
+
+{% block headline %}
+<h1>Logged out.</h1>
+{% endblock headline %}
+
+{% block content %}
+<div class="row">
+  <div class="two columns">&nbsp;</div>
+  <div class="ten columns">
+    <p>You have been successfully logged out.</p>
+    <a class="button" href="{% url 'account:login' %}">Login again</a>
+    <br>
+    <a class="button" href="{% url 'weather:index' %}">Home</a>
+  </div>
+</div>
+{% endblock content %}
